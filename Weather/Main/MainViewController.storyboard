@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ExV-nK-Bt5">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainViewController-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" title="MainViewController" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="MainViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="siJ-E8-YRG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEk-Yy-niD">
+                                <rect key="frame" x="28" y="248" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BEk-Yy-niD" secondAttribute="height" multiplier="1:1" id="Jxd-rX-awW"/>
+                                    <constraint firstAttribute="height" constant="60" id="W9n-TR-eFt"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Location"/>
+                                <connections>
+                                    <action selector="getLocation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Bup-6k-30D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDX-cP-xxR">
+                                <rect key="frame" x="236" y="552" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.55929277217517459" green="0.49935023185610827" blue="0.70361197112452645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nDX-cP-xxR" secondAttribute="height" multiplier="3:1" id="7Oa-aq-uXg"/>
+                                    <constraint firstAttribute="height" constant="50" id="Bcg-mV-j3r"/>
+                                </constraints>
+                                <color key="tintColor" red="0.1773410738" green="0.10086757690000001" blue="0.3471609652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show weather">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showWeather:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lF9-dH-iHS"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the city" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="o6y-5Z-nhG">
+                                <rect key="frame" x="88" y="248" width="298" height="60"/>
+                                <color key="backgroundColor" red="0.5613768697" green="0.49750000239999997" blue="0.70060747860000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aRq-WM-SB4"/>
+                                </constraints>
+                                <color key="textColor" red="0.25293470179999999" green="0.18576171499999999" blue="0.40948447799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search" textContentType="address-level2"/>
+                                <connections>
+                                    <action selector="cityInputBegined:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="QGa-wf-0Mv"/>
+                                    <action selector="cityInputChanged:" destination="Y6W-OH-hqX" eventType="editingChanged" id="aq9-eP-AK6"/>
+                                </connections>
+                            </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Ori-8i-t7Q">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.44785182350000002" green="0.38563067940000001" blue="0.61181971999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="siJ-E8-YRG" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="1rW-2T-AuF"/>
+                            <constraint firstItem="siJ-E8-YRG" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="8Kw-iX-FCA"/>
+                            <constraint firstItem="BEk-Yy-niD" firstAttribute="centerY" secondItem="o6y-5Z-nhG" secondAttribute="centerY" id="BOt-6M-1r8"/>
+                            <constraint firstItem="o6y-5Z-nhG" firstAttribute="leading" secondItem="BEk-Yy-niD" secondAttribute="trailing" id="KQG-Jl-vqw"/>
+                            <constraint firstItem="o6y-5Z-nhG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="160" id="R6R-0D-v7S"/>
+                            <constraint firstAttribute="trailing" secondItem="siJ-E8-YRG" secondAttribute="trailing" id="Sgi-5h-CRP"/>
+                            <constraint firstItem="BEk-Yy-niD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="UGE-nG-oys"/>
+                            <constraint firstItem="Ori-8i-t7Q" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Ufe-nA-xdg"/>
+                            <constraint firstItem="Ori-8i-t7Q" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Vlw-9z-WZ9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nDX-cP-xxR" secondAttribute="bottom" constant="260" id="c4U-m6-2Nm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nDX-cP-xxR" secondAttribute="trailing" constant="28" id="p74-01-Ar6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o6y-5Z-nhG" secondAttribute="trailing" constant="28" id="uyS-Yq-AYZ"/>
+                            <constraint firstAttribute="bottom" secondItem="siJ-E8-YRG" secondAttribute="bottom" id="xOo-re-q5H"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="a2d-Y4-KVi"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Ori-8i-t7Q" id="aXS-MH-xZL"/>
+                        <outlet property="cityTextField" destination="o6y-5Z-nhG" id="Hr2-GP-1FN"/>
+                        <outlet property="showWeatherButton" destination="nDX-cP-xxR" id="5Cj-PZ-aLm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="79.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T5Z-v4-TQk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ExV-nK-Bt5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kpl-WN-7Va">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="jau-FW-z1c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RUL-RL-RtM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Location" width="50" height="50"/>
+        <image name="MainBackground" width="149" height="254"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
